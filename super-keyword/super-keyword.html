@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //super:keyword is used in classes to call the constructor or access the properties and methods of a parent (super class)
+        // this =this object
+        //super =the parent
+        class Animal{
+            constructor(name,age){
+                this.name=name;
+                this.age=age;
+                console.log(`Im ${this.name} and my age is ${this.age}`);
+            }
+            move(speed){
+                console.log(`${this.name} can move in speed of ${speed}kmph`);
+            }
+             
+        }
+        class Rabbit extends Animal{
+            constructor(name,age,runspeed){
+                super(name,age);
+                this.runspeed=runspeed;
+                console.log(`My runspeed is ${this.runspeed}`);
+                super.move(this.runspeed);
+
+            }
+            
+        }
+        class fish extends Animal{
+            constructor(name,age,swimspeed){
+                super(name,age);
+                this.swimspeed=swimspeed;
+                console.log(`My swimspeed is ${this.swimspeed}`);
+                super.move(this.swimspeed);
+                
+            }
+        }
+        let r1=new Rabbit("rabbit",18,50);
+        let f1=new fish("Fish",5,80);
+        
+    </script>
+</body>
+</html>
